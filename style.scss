@@ -1,0 +1,133 @@
+
+$color-black:#000;
+$color-white:#fff;
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: rgba(187, 187, 245,1);
+    color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &__card{
+        width: 350px;
+        height: 500px;
+        box-shadow: 0 0 40px 20px rgba($color-black ,0.26);
+        perspective: 1000px;
+
+        &--inner-box{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        h2{
+            font-weight: normal;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn{
+            margin-top: 70px;
+        }
+
+        a{
+            color: $color-white;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+    }
+}
+
+.card-front, .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,80,0.8)), url("back.jpg");
+    padding: 55px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.card-back{
+    transform: rotateY(180deg);
+}
+
+.input-box{
+    width: 100%;
+    height: 32px;
+    background: transparent;
+    border: 1px solid $color-white;
+    border-radius: 20px;
+    margin: 6px 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    text-align: center;
+    color: $color-white;
+
+    &::placeholder{
+        color: $color-white;
+        font-size: 12px;
+    }
+}
+
+
+
+button{
+    width: 100%;
+    height: 32px;
+    background: transparent;
+    border: 1px solid $color-white;
+    border-radius: 20px;
+    margin: 35px 0 10px;
+    padding: 0 10px;
+    font-size: 12px;
+    box-sizing: border-box;
+    outline: none;
+    color: $color-white;
+    cursor: pointer;
+}
+
+.submit-btn{
+    position: relative;
+
+    &::after{
+        content: "\27a4";
+        color: #333;
+        line-height: 32px;
+        height: 32px;
+        width: 32px;
+        font-size: 17px;
+        border-radius: 50%;
+        background: $color-white;
+        position: absolute;
+        right: -1px;
+        top: -1px;
+    }
+}
+
+span{
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+
